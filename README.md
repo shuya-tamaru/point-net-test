@@ -1,1 +1,1 @@
-hi
+python main.py --input path/to/your/pointcloud.ply
