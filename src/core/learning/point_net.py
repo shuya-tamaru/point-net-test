@@ -52,9 +52,7 @@ class PointNet(nn.Module):
         # 局所特徴とグローバル特徴を結合
         local_feat = local_feat.squeeze(0).transpose(0, 1)  # [N, 64]
         concat_feat = torch.cat(
-            [local_feat, expanded_global_feat], dim=1)  # [N, 64+512=576]
-
-        # セグメンテーション用デコーダー
+            [local_feat, expanded_global_feat], dim=1)
         # 結合特徴を戻す [N, 576] -> [1, 576, N]
         concat_feat = concat_feat.transpose(1, 0).unsqueeze(0)
 
